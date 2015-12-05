@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+*{ margin: 0; padding: 0; list-style: none;}
+input{ width: 50px; height: 50px;}
+#btn1{ position: absolute; left: 100px; top: 100px;}
+
+ul{ width:510px; height: 510px; overflow: hidden; border: 1px solid #ccc; margin: 50px auto; }
+li{ width: 150px; height:150px; margin: 10px; float: left; background: #6f0; text-align: center; line-height: 150px; font-size: 50px; opacity: 1;}
+</style>
+<script src="js/move.js"></script>
+<script>
+window.onload=function ()
+{
+    var oBtn1=document.getElementById('btn1');
+   
+    var oUl=document.getElementById('ul1');
+    var aLi=oUl.children;
+
+    //布局转换
+    var aPos=[];
+    for(var i=0; i<aLi.length; i++)
+    {
+        var left=aLi[i].offsetLeft;
+        var top=aLi[i].offsetTop;
+        aLi[i].style.left=left+'px';
+        aLi[i].style.top=top+'px';
+        aPos.push({left:left,top:top});
+    }
+
+    for(var i=0; i<aLi.length; i++)
+    {
+        aLi[i].style.position='absolute';
+        aLi[i].style.margin=0;
+    }
+
+    //测试代码
+    for(var i=0; i<aLi.length; i++)
+    {
+        aLi[i].innerHTML=i;
+    }
+
+    //点击
+    oBtn1.onclick=function ()
+    {
+        var n=0;
+        var timer=setInterval(function (){
+            (function (index){
+                move(aLi[n],{top:0,left:0,width:0,height:0,opacity:0,lineHeight:0,fontSize:0},{
+                    duration:300,
+                    complete:function (){
+                        if(index == aLi.length-1)
+                        {
+                            end();
+                        }
+                    }
+                });
+            })(n);
+
+            n++;
+            if(n == aLi.length)
+            {
+                clearInterval(timer);
+            }
+        },100);
+    };
+
+    function end()
+    {
+        for(var i=0; i<aLi.length; i++)
+        {
+            aLi[i].style.background='#fc0';
+        }
+        var n=aLi.length-1;
+        var timer=setInterval(function (){
+            var left=aPos[n].left;
+            var top=aPos[n].top;
+            move(aLi[n],{left:left,top:top,width:150, height:150,lineHeight:150,opacity:1,fontSize:50},{duration:300});
+            n--;
+            if(n == -1)
+            {
+                clearInterval(timer);
+            }
+        },100);
+    }
+};
+</script>
+</head>
+<body>
+    <input type="button" id="btn1" value="go" />
+    
+    <ul id="ul1">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

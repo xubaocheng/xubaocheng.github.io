@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>个人作品</title>
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+
+<script src="js/startMove.js"></script>
+<script src="js/move.js"></script>
+<script src="js/index.js"></script>
+<script src="js/putWall.js"></script>
+<script src="js/ajax.js"></script>
+</head>
+
+<body>
+	
+	<!--导航 -->
+	<ul class="nav" id="nav">
+		<li>
+			<a href="javascript:;">主&nbsp&nbsp页</a>
+		</li>
+		<li>
+			<a href="javascript:;">个人简介</a>
+		</li>
+		<li>
+			<a href="javascript:;">个人作品</a>
+		</li>
+		<li>
+			<a href="javascript:;">联系方式</a>
+		</li>
+		<li>
+			<a href="javascript:;">留 言 板</a>
+		</li>
+		<li class="box"></li>
+	</ul>
+    <div class="warp" id="warp">
+    <!-- 第一部分 -->
+    <div id="first" class="tab">
+		<div class="f_main">
+			<div class="header clearfix">
+                <h1>X B C</h1>
+                <p><span>————</span>比起得过且过，我更想丰富而热烈的生活</p>
+                <img src="images/me.jpg" alt="" />                 
+            </div>
+            <div class="f_bottom">
+                <div class="b_left">
+                    <ul id="big_ul">
+                        <li><img src="images/s_banner1.jpg" alt="" /></li>
+                        <li><img src="images/s_banner2.jpg" alt="" /></li>
+                        <li><img src="images/s_banner3.jpg" alt="" /></li>
+                        <li><img src="images/s_banner4.jpg" alt="" /></li>
+                        <li><img src="images/s_banner5.jpg" alt="" /></li>
+                        
+                    </ul>
+                    <ol id="little_ol">
+                        <li><img src="images/s_banner1.jpg" alt="" /></li>
+                        <li><img src="images/s_banner2.jpg" alt="" /></li>
+                        <li><img src="images/s_banner3.jpg" alt="" /></li>
+                        <li><img src="images/s_banner4.jpg" alt="" /></li>
+                        <li><img src="images/s_banner5.jpg" alt="" /></li>
+                        <li class="next"></li>
+                    </ol>                
+                </div>
+                <div class="b_right">
+                    <p>毕竟不是作家，写不出那么好的文章。--因为没有丰富阅历和经验！</p>
+                </div>
+            </div>
+            <div class="typing" id="typing">
+                
+            </div>
+		</div>   
+	</div>
+    <!-- 第二部分 -->
+    <div id="second" class="tab">
+       <div class="s_content">
+           <div class="s_content_t">
+               <h2>自我介绍</h2>
+               <h3>基本信息</h3>
+               <p class="clearfix"><span class="s_left">姓&nbsp&nbsp名:</span><strong class="s_right">徐宝成</strong></p>
+               <p class="clearfix"><span class="s_left">年&nbsp&nbsp龄:</span><strong class="s_right">25</strong></p>
+               <p class="clearfix"><span class="s_left">住&nbsp&nbsp址:</span><strong class="s_right">北京昌平</strong></p>
+               <p class="clearfix"><span class="s_left">联系电话:</span><strong class="s_right">18501237956</strong></p>
+               <p class="clearfix"><span class="s_left">email&nbsp :</span><strong class="s_right">xth5516739@163.com</strong></p> 
+           </div> 
+           <div class="s_content_b">
+                <p>技能评测</p>
+                <ul class="s_bar" id="s_bar">
+                    <li><span>HTML</span><div><i id="bar_html"></i></div></li>
+                    <li><span>CSS</span><div><i id="bar_css"></i></div></li>
+                    <li><span>JavaScript</span><div><i id="bar_js"></i></div></li>
+                    <li><span>CSS3</span><div><i id="bar_css3"></i></div></li>
+                    <li><span>HTML5</span><div><i id="bar_html5"></i></div></li>
+                </ul>
+           </div>
+        </div>
+    </div>
+    <!-- 第三部分 -->
+    <div id="third" class="tab">
+        <ul class="clearfix put_wall active" id="wall">
+            <li class="wall_li"><a href="page1.html"><img src="images/page1.jpg"><span>手风琴</span></a></li>
+            <li class="wall_li"><a href="page2.html"><img src="images/page2.png"><span>带进度条的选项卡</span></a></li>
+            <li class="wall_li"><a href="page3.html"><img src="images/page3.png"><span>分块运动</span></a></li>
+            <li class="wall_li"><a href="page4.html"><img src="images/page4.png"><span>照片墙</span></a></li>
+            <li class="wall_li"><a href="page5.html"><img src="images/page5.png"><span>运动效果</span></a></li>
+            <li class="wall_li"><a href="page6.html"><img src="images/page6.png"><span>瀑布流</span></a></li>
+        </ul>
+		
+		<ul class="clearfix put_wall" id="wall2">
+            <li class="wall_li"><a href="demo1.html"><img src="images/demo1.png"></a></li>
+            <li class="wall_li"><a href="demo2.html"><img src="images/demo2.png"></a></li>
+            <li class="wall_li"><a href="demo3.html"><img src="images/demo3.png"></a></li>
+            <li class="wall_li"><a href="demo4.html"><img src="images/demo4.png"></a></li>
+            <li class="wall_li"><a href="demo5.html"><img src="images/demo5.png"></a></li>
+            <li class="wall_li"><a href="demo6.html"><img src="images/demo6.png"></a></li>
+        </ul>
+		
+		<div class="t_btn1 active">JS运动小例子</div>
+		<div class="t_btn2">html5 & css3</div>
+    </div>
+    <!-- 第四部分 -->
+    <div id="fourth" class="tab">
+        <div class="message">
+            <div class="mes_top">
+                <img src="images/message.png" alt="" />
+                <img src="images/message2.png" alt="" />
+            </div>
+            <div class="mes_bottom">
+                <p><span>QQ:409961443</span><span>TEL:18501237956</span></p>
+                <p><span>E-MAIL:xth5516739@163.com</span></p>
+                <p class="mes_p"><a href="javascript:;">MESSAGE ME</a><i>Contact with me</i></p>
+            </div>
+        </div>
+    </div>
+    <!-- 第五部分 -->
+    <div id="fifth" class="tab">
+        <!---注册-->
+        <div class="loginBox">
+			<ul class="loginList clearfix">
+				<li class="hTxt">用户注册</li>
+				<li class="inputBox">
+					<input type="text" class="inputs" id="add_user">
+				</li>
+				<li class="inputBox">
+					<input type="password" class="inputs" id="add_pass">
+				</li>
+				<li class="btns">
+					<input id="add_btn" type="button" class="reg" value="" />
+				</li>
+				<li class="look"><a href="user_view.php" target="_blank">查看已注册用户</a></li>
+			</ul>
+		</div>
+		<!--注册-->
+		<div class="loginBox">
+			<ul class="loginList clearfix">
+				<li class="hTxt">用户登陆</li>
+				<li class="inputBox">
+					<input type="text" class="inputs" id="login_user">
+				</li>
+				<li class="inputBox">
+					<input type="password" class="inputs" id="login_pass">
+				</li>
+				<li class="btns">
+					<a href="javascript:;" id="a1">
+						<input id="login_btn" type="button" class="login" value="" />
+					</a>
+				</li>
+			</ul>
+		</div>
+    </div>
+    </div>
+</body>
+</html>

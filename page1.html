@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+*{ margin:0; padding: 0; list-style: none;}
+body{ background: #000;}
+ul {overflow: hidden; position:relative;width: 880px; height: 563px; border:1px solid red; margin:50px auto; }
+li {position:absolute; top:0; left:0; padding-left:20px; }
+
+span { position:absolute; top:0; left:0; width:20px; height:100%; }
+</style>
+<script src="js/move.js"></script>
+<script>
+window.onload=function (){
+    var aLi=document.getElementsByTagName('li');
+    var aSpan=document.getElementsByTagName('span');
+    var liW=aLi[0].offsetWidth;
+    var sW=aSpan[0].offsetWidth;
+    
+    // 默认left
+    for (var i=0; i<aLi.length; i++)
+    {
+        if (i != 0)
+        {
+            aLi[i].style.left=liW+(i-1)*sW+'px';
+        }
+    }
+    
+    for (var i=0; i<aSpan.length; i++)
+    {
+        (function (index){
+            aSpan[i].onmouseover=function (){
+                index
+                for (var i=0; i<aLi.length; i++)
+                {
+                    if (i <= index)
+                    {
+                        // aLi[i].style.left=i*sW+'px';
+                        move(aLi[i], {left:i*sW}, {
+                            duration:300    
+                        });
+                    }
+                    else
+                    {
+                        // aLi[i].style.left=liW+(i-1)*sW+'px';
+                        move(aLi[i], {left:liW+(i-1)*sW}, {
+                            duration:300    
+                        });
+                    }
+                }
+            };
+        })(i);
+    }
+};
+</script>
+</head>
+<body>
+    <ul>
+        <li><span style="background:#F90;">第一项</span><img src="images/01.png" alt="" /></li>
+        <li><span style="background:#FF3;">第二项</span><img src="images/02.png" alt="" /></li>
+        <li><span style="background:#0CF;">第三项</span><img src="images/03.png" alt="" /></li>
+        <li><span style="background:#0FC;">第四项</span><img src="images/04.png" alt="" /></li>
+        <li><span style="background:#06f;">第五项</span><img src="images/05.png" alt="" /></li>
+    </ul>
+</body>
+</html>
